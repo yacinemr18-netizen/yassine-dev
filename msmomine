@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع ياسين - أحبكم مسمومين</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
+    }
+    .avatar {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #00f2fe;
+    }
+    .specs-list {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 25px;
+      text-align: right;
+    }
+    .specs-list li {
+      list-style: none;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .specs-list li span {
+      color: #4facfe;
+      font-weight: bold;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      text-align: right;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      font-size: 14px;
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      height: 90px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .comments-title {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .comments-box {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      text-align: right;
+    }
+    .comment-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .comment-item strong {
+      color: #00f2fe;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="avatar">😜</div>
+    
+    <!-- العنوان الرئيسي الجديد -->
+    <h1>أحبكم مسمومين! 💚</h1>
+
+    <!-- مواصفاتك وأشياؤك المفضلة -->
+    <ul class="specs-list">
+      <li><span>الاسم:</span> ياسين</li>
+      <li><span>الأشياء التي أحبها:</span> البرمجة، الألعاب، والمقالب الحلوة</li>
+      <li><span>رسالتي لكم:</span> مرحباً بكم في موقعي الخاص!</li>
+    </ul>
+
+    <h2 style="font-size:18px; margin-bottom:15px;">اترك لي رأيك بصراحة ✍️</h2>
+
+    <!-- نموذج كتابة الرأي -->
+    <form id="feedbackForm">
+      <div class="form-group">
+        <input type="text" id="friendName" placeholder="اسمك يا مسموم" required>
+      </div>
+      <div class="form-group">
+        <textarea id="friendOpinion" placeholder="اكتب رأيك هنا..." required></textarea>
+      </div>
+      <button type="submit">إرسال الرأي ✨</button>
+    </form>
+
+    <h3 class="comments-title">آراء الأصدقاء:</h3>
+    <div class="comments-box" id="commentsBox">
+      <div class="comment-item">
+        <strong>صديقك:</strong> موقع جميل يا ياسين!
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+    const commentsBox = document.getElementById('commentsBox');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('friendName').value;
+      const opinion = document.getElementById('friendOpinion').value;
+
+      const newComment = document.createElement('div');
+      newComment.className = 'comment-item';
+      newComment.innerHTML = `<strong>${name}:</strong> ${opinion}`;
+
+      commentsBox.prepend(newComment);
+
+      form.reset();
+      alert('تم إرسال رأيك بنجاح!');
+    });
+  </script>
+
+</body>
+</html>
