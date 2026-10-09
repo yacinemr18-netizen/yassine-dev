@@ -1,163 +1,175 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>روابط التواصل الاجتماعي</title>
-    <!-- خط جوجل والأيقونات -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 420px;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #38bdf8;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-
-        p.bio {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .link-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .link-card:hover {
-            background: rgba(56, 189, 248, 0.15);
-            border-color: #38bdf8;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2);
-        }
-
-        .link-card i {
-            font-size: 1.4rem;
-            width: 30px;
-        }
-
-        /* ألوان الأيقونات عند التمرير */
-        .instagram i { color: #e1306c; }
-        .tiktok i { color: #00f2fe; }
-        .youtube i { color: #ff0000; }
-        .facebook i { color: #1877f2; }
-        .whatsapp i { color: #25d366; }
-        .telegram i { color: #229ed9; }
-
-        footer {
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: #64748b;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع ياسين - أحبكم مسمومين</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
+    }
+    .avatar {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #00f2fe;
+    }
+    .specs-list {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 25px;
+      text-align: right;
+    }
+    .specs-list li {
+      list-style: none;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .specs-list li span {
+      color: #4facfe;
+      font-weight: bold;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      text-align: right;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      font-size: 14px;
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      height: 90px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .comments-title {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .comments-box {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      text-align: right;
+    }
+    .comment-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .comment-item strong {
+      color: #00f2fe;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- الصورة الشخصية -->
-        <img src="https://via.placeholder.com/150" alt="صورة الملف الشخصي" class="profile-img">
+  <div class="card">
+    <div class="avatar">😜</div>
+    
+    <!-- العنوان الرئيسي الجديد -->
+    <h1>أحبكم مسمومين! 💚</h1>
 
-        <!-- الاسم والوصف -->
-        <h1>اسمك هنا</h1>
-        <p class="bio">أهلاً بك! تجد هنا جميع حساباتي وروابط التواصل الخاصة بي.</p>
+    <!-- مواصفاتك وأشياؤك المفضلة -->
+    <ul class="specs-list">
+      <li><span>الاسم:</span> ياسين</li>
+      <li><span>الأشياء التي أحبها:</span> البرمجة، الألعاب، والمقالب الحلوة</li>
+      <li><span>رسالتي لكم:</span> مرحباً بكم في موقعي الخاص!</li>
+    </ul>
 
-        <!-- روابط التواصل الاجتماعي -->
-        <div class="links-container">
+    <h2 style="font-size:18px; margin-bottom:15px;">اترك لي رأيك بصراحة ✍️</h2>
 
-            <a href="https://instagram.com/USERNAME" target="_blank" class="link-card instagram">
-                <i class="fab fa-instagram"></i>
-                <span>إنستغرام</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
+    <!-- نموذج كتابة الرأي -->
+    <form id="feedbackForm">
+      <div class="form-group">
+        <input type="text" id="friendName" placeholder="اسمك يا مسموم" required>
+      </div>
+      <div class="form-group">
+        <textarea id="friendOpinion" placeholder="اكتب رأيك هنا..." required></textarea>
+      </div>
+      <button type="submit">إرسال الرأي ✨</button>
+    </form>
 
-            <a href="https://tiktok.com/@USERNAME" target="_blank" class="link-card tiktok">
-                <i class="fab fa-tiktok"></i>
-                <span>تيك توك</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
-
-            <a href="https://youtube.com/@USERNAME" target="_blank" class="link-card youtube">
-                <i class="fab fa-youtube"></i>
-                <span>يوتيوب</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
-
-            <a href="https://facebook.com/USERNAME" target="_blank" class="link-card facebook">
-                <i class="fab fa-facebook"></i>
-                <span>فيسبوك</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
-
-            <a href="https://wa.me/213XXXXXXXXX" target="_blank" class="link-card whatsapp">
-                <i class="fab fa-whatsapp"></i>
-                <span>واتساب</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
-
-            <a href="https://t.me/USERNAME" target="_blank" class="link-card telegram">
-                <i class="fab fa-telegram-plane"></i>
-                <span>تيليجرام</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
-
-        </div>
-
-        <footer>
-            © جميع الحقوق محفوظة
-        </footer>
+    <h3 class="comments-title">آراء الأصدقاء:</h3>
+    <div class="comments-box" id="commentsBox">
+      <div class="comment-item">
+        <strong>صديقك:</strong> موقع جميل يا ياسين!
+      </div>
     </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+    const commentsBox = document.getElementById('commentsBox');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('friendName').value;
+      const opinion = document.getElementById('friendOpinion').value;
+
+      const newComment = document.createElement('div');
+      newComment.className = 'comment-item';
+      newComment.innerHTML = `<strong>${name}:</strong> ${opinion}`;
+
+      commentsBox.prepend(newComment);
+
+      form.reset();
+      alert('تم إرسال رأيك بنجاح!');
+    });
+  </script>
 
 </body>
 </html>
